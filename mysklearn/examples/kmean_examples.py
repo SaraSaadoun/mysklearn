@@ -14,9 +14,11 @@ def read_image(path):
     return img
 
 
-def show_img(img):
+def show_img(img, title):
     plt.imshow(img)
+    plt.title(title)
     plt.show()
+
 
 # examples
 def image_compression():
@@ -25,7 +27,7 @@ def image_compression():
 
     # read and show the image needed to be compressed
     img = read_image('../datasets/bird.JPG')
-    show_img(img)
+    show_img(img, "before compression")
 
     # reshape it from (n, m, 3 ) in which the image is n * m pixels and 3 refer to 3 rgb colors to (n * m, 3)
     img_2d = img.reshape((-1, img.shape[2]))
@@ -44,7 +46,7 @@ def image_compression():
     new_img = np.reshape(new_img, img.shape)
 
     # wish you a happy result :)
-    show_img(new_img)
+    show_img(new_img, "after compression")
 
 
 def housing():

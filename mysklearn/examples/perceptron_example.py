@@ -18,7 +18,9 @@ if __name__ == '__main__':
     ax1.scatter(features[:, 0], features[:, 1], c=labels)
     x = np.linspace(0, 3, 30)
     ax1.plot(x, (-weights[0] * x - bias) / weights[1])
+    ax1.set_title("data + classification model")
 
     # visualize convergence
     ax2.plot(range(len(errors)), errors)
+    ax2.set_title("cost while training")
     plt.show()
