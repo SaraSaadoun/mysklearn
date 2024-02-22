@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from my_sklearn.k_means import KMeans
-
+from mysklearn.k_means import KMeans
 
 # helper functions
 def read_image(path):

@@ -1,6 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
-from my_sklearn.linear_regression import *
+from mysklearn.linear_regression import *
 def multi_variate():
     # multi_variate()
     # data - don't forget to normalize data if needed
@@ -13,17 +13,17 @@ def multi_variate():
     # plt.scatter(X_norm, y)
     # plt.show()
     df = pd.read_csv('../datasets/ex1data1.csv')
-    # print(df.head)
+    print(df.head)
     df.columns = ['column1', 'column2']
 
     X_norm1 = df['column1'].values
     X_norm2 = (df['column1'].values * -0.2 - 11)
     print(X_norm2.shape)
-    X_norm = np.column_stack((X_norm1, X_norm2))
+    X_norm = df.iloc[:, :-1].values
 
     print(X_norm.shape)
-    y = df['column2'].values.reshape(-1, 1)
-    print(X.shape, y.shape)
+    y = df.iloc[:, -1].values.reshape(-1, 1)
+    print("x, y shapes:",X_norm.shape, y.shape)
     # return
     # linear_regression model
     reg = LinearRegression(num_iterations=1500)
